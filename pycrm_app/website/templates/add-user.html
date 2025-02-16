@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% block content %}
+    <br/>
+    <div class="col-md-6 offset-md-3">
+        <h1>ADD NEW USER</h1>
+        <form method="POST", act="{% url 'add_user' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br/>
+            <button type="submit" class="btn btn-success">Add User</button>
+            <a type="submit" class="btn btn-primary" href="{% url 'home' %}">Back</a>
+        </form>
+    </div>
+{% endblock %}  
